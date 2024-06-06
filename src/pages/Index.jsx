@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Container, Flex, Heading, HStack, IconButton, Image, Input, Text, VStack } from "@chakra-ui/react";
-import { FaSearch, FaUserCircle, FaBell, FaCog } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+import Navigation from "../components/Navigation";
 
 const Index = () => {
   return (
@@ -12,15 +13,11 @@ const Index = () => {
           <Input placeholder="Search" size="md" width="300px" />
           <IconButton aria-label="Search" icon={<FaSearch />} />
         </HStack>
-        <HStack spacing={4}>
-          <IconButton aria-label="Notifications" icon={<FaBell />} />
-          <IconButton aria-label="Settings" icon={<FaCog />} />
-          <IconButton aria-label="User" icon={<FaUserCircle />} />
-        </HStack>
+        <Navigation />
       </Flex>
 
       {/* Main Content */}
-      <Flex>
+      <Flex direction={{ base: "column", md: "row" }}>
         {/* Sidebar */}
         <VStack align="start" spacing={4} width="20%" p={4} borderRight="1px solid #e2e8f0">
           <Heading size="md">Categories</Heading>
